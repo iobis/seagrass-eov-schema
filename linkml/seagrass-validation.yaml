@@ -1,0 +1,15 @@
+schema: linkml/seagrass.yaml
+target_class: SeagrassContainer
+
+data_sources:
+  - CsvLoader:
+      source: data/event.csv
+      index_slot_name: events
+  - CsvLoader:
+      source: data/occurrence.csv
+      index_slot_name: occurrences
+
+# plugins:
+#   JsonschemaValidationPlugin:
+#     closed: true
+#   RecommendedSlotsPlugin:

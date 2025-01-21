@@ -1,0 +1,287 @@
+id: seagrass_data
+name: SeagrassData
+
+imports:
+  - linkml:types
+
+enums:
+  MeasurementTypeType:
+    permissible_values:
+      - arealExtent
+      - canopyHeight
+      - percentCover
+      - shootDensity
+      - diseasePrevalence 
+      - diseaseSeverity
+      - dryBiomassOtherSpp
+      - dryBiomassRoots
+      - dryBiomassShoots
+      - growthRate
+      - habitat
+      - leafLength
+      - photosyntheticEfficiency
+      - floweringProportion
+      - seedBank
+      - seagrassDryBiomassTotal
+      - depth
+      - Photosynthetically Active Radiation (PAR)
+      - Nutrients
+      - Reflectance
+      - Salinity
+      - Sediment characteristics
+      - Water clarity
+      - Water temperature
+      - epifaunaAbundance
+      - epiphyteAbundance
+      - fishAbundance 
+      - macroalgaeBiomass
+      - macroalgaeCover
+
+classes:
+
+  SeagrassContainer:
+    attributes:
+      events:
+        multivalued: true
+        inlined_as_list: true
+        range: Event
+      occurrences:
+        multivalued: true
+        inlined_as_list: true
+        range: Occurrence
+      mof:
+        multivalued: true
+        inlined_as_list: true
+        range: MeasurementOrFact
+
+  Event:
+    slots:
+      - eventID
+      - decimalLongitude
+      - decimalLatitude
+      - eventDate
+      - footprintSRS
+      - footprintWKT
+      - bibliographicCitation
+      - coordinateUncertaintyInMeters
+      - country
+      - datasetID
+      - datasetName
+      - fieldNotes
+      - geodeticDatum
+      - habitat
+      - institutionCode
+      - institutionID
+      - license
+      - maximumDepthInMeters
+      - minimumDepthInMeters
+      - parentEventID
+      - rightsHolder
+      - samplingProtocol
+    slot_usage:
+      eventID:
+        range: string
+
+  Occurrence:
+    slots:
+      - eventID
+      - occurrenceID
+      - scientificName
+      - eventID
+      - basisOfRecord
+      - occurrenceID
+      - occurrenceStatus
+      - scientificName
+      - scientificNameID
+      - class
+      - family
+      - genus
+      - identifiedBy
+      - kingdom
+      - order
+      - phylum
+      - recordedBy
+      - taxonRank
+      - vernacularName
+    slot_usage:
+      eventID:
+        range: Event
+      occurrenceID:
+        range: string
+
+  MeasurementOrFact:
+    slots:
+      - eventID
+      - occurrenceID
+      - measurementID
+      - measurementType
+      - measurementUnit
+      - measurementValue
+      - measurementAccuracy
+      - measurementDeterminedBy
+      - measurementDeterminedDate
+      - measurementMethod
+      - measurementTypeID
+      - measurementUnitID
+      - measurementValueID
+      - sampleSizeUnit
+      - sampleSizeValue
+    slot_usage:
+      eventID:
+        range: Event
+      occurrenceID:
+        range: Occurrence
+
+slots:
+
+  eventID:
+    identifier: true
+
+  occurrenceID:
+    identifier: true
+    range: string
+
+  eventDate:
+    range: date
+
+  footprintSRS:
+    range: string
+
+  footprintWKT:
+    range: string
+
+  bibliographicCitation:
+    range: string
+
+  coordinateUncertaintyInMeters:
+    range: float
+
+  country:
+    range: string
+
+  datasetID:
+    range: string
+
+  datasetName:
+    range: string
+
+  fieldNotes:
+    range: string
+
+  geodeticDatum:
+    range: string
+
+  habitat:
+    range: string
+
+  institutionCode:
+    range: string
+
+  institutionID:
+    range: string
+
+  license:
+    range: string
+
+  maximumDepthInMeters:
+    range: float
+
+  minimumDepthInMeters:
+    range: float
+
+  parentEventID:
+    range: string
+
+  rightsHolder:
+    range: string
+
+  samplingProtocol:
+    range: string
+
+  occurrenceStatus:
+    range: string
+
+  scientificNameID:
+    pattern: "urn:lsid:marinespecies\\.org:taxname:[0-9]+"
+
+  class:
+    range: string
+
+  family:
+    range: string
+
+  genus:
+    range: string
+
+  identifiedBy:
+    range: string
+
+  kingdom:
+    range: string
+
+  order:
+    range: string
+
+  phylum:
+    range: string
+
+  recordedBy:
+    range: string
+
+  taxonRank:
+    range: string
+
+  vernacularName:
+    range: string
+
+  decimalLongitude:
+    range: float
+
+  decimalLatitude:
+    range: float
+  
+  scientificName:
+    range: string
+
+  basisOfRecord:
+    range: string
+
+  measurementID:
+    range: string
+    identifier: true
+
+  measurementType:
+    range: MeasurementTypeType
+
+  measurementUnit:
+    range: string
+
+  measurementValue:
+    range: string
+
+  measurementAccuracy:
+    range: string
+
+  measurementDeterminedBy:
+    range: string
+
+  measurementDeterminedDate:
+    range: date
+
+  measurementMethod:
+    range: string
+
+  measurementTypeID:
+    range: string
+
+  measurementUnitID:
+    range: string
+
+  measurementValueID:
+    range: string
+
+  sampleSizeUnit:
+    range: string
+
+  sampleSizeValue:
+    range: float
