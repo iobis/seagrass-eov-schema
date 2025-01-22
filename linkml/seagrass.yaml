@@ -1,5 +1,5 @@
 id: https://github.com/iobis/seagrass-eov-schema/
-name: Seagrass EOV Schema
+name: Seagrass
 
 prefixes: 
   linkml: https://w3id.org/linkml/
