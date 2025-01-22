@@ -1,5 +1,5 @@
 id: https://github.com/iobis/seagrass-eov-schema/
-name: SeagrassData
+name: Seagrass EOV Schema
 
 prefixes: 
   linkml: https://w3id.org/linkml/
@@ -42,7 +42,7 @@ enums:
 
 classes:
 
-  SeagrassContainer:
+  SeagrassDataset:
     attributes:
       events:
         multivalued: true

@@ -14,5 +14,6 @@ gen-excel linkml/seagrass.yaml --output seagrass_template.xlsx
 ## Docs generation
 
 ```bash
+# gen-doc throwing an error for now
 gen-markdown -d docs linkml/seagrass.yaml
 ```

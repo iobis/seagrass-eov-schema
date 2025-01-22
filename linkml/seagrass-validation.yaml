@@ -1,5 +1,5 @@
 schema: linkml/seagrass.yaml
-target_class: SeagrassContainer
+target_class: SeagrassDataset
 
 data_sources:
   - CsvLoader:
