@@ -1,5 +1,5 @@
 
-# SeagrassData
+# Seagrass
 
 
 **metamodel version:** 1.7.0
@@ -15,7 +15,7 @@
  * [Event](Event.md)
  * [MeasurementOrFact](MeasurementOrFact.md)
  * [Occurrence](Occurrence.md)
- * [SeagrassContainer](SeagrassContainer.md)
+ * [SeagrassDataset](SeagrassDataset.md)
 
 ### Mixins
 
@@ -75,9 +75,9 @@
  * [samplingProtocol](samplingProtocol.md)
  * [scientificName](scientificName.md)
  * [scientificNameID](scientificNameID.md)
- * [➞events](seagrassContainer__events.md)
- * [➞mof](seagrassContainer__mof.md)
- * [➞occurrences](seagrassContainer__occurrences.md)
+ * [➞events](seagrassDataset__events.md)
+ * [➞mof](seagrassDataset__mof.md)
+ * [➞occurrences](seagrassDataset__occurrences.md)
  * [taxonRank](taxonRank.md)
  * [vernacularName](vernacularName.md)
 
