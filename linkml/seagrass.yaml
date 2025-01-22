@@ -86,6 +86,7 @@ classes:
       eventID:
         range: string
         identifier: true
+        required: true
 
   Occurrence:
     class_uri: http://rs.tdwg.org/dwc/terms/Occurrence
@@ -110,9 +111,11 @@ classes:
     slot_usage:
       eventID:
         range: Event
+        required: true
       occurrenceID:
         range: string
         identifier: true
+        required: true
 
   MeasurementOrFact:
     class_uri: http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact
@@ -135,8 +138,10 @@ classes:
     slot_usage:
       eventID:
         range: Event
+        required: true
       occurrenceID:
         range: Occurrence
+        required: true
 
 slots:
 
@@ -148,6 +153,7 @@ slots:
 
   eventDate:
     range: date
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/eventDate
 
   footprintSRS:
@@ -224,10 +230,12 @@ slots:
 
   occurrenceStatus:
     range: string
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/occurrenceStatus
 
   scientificNameID:
     range: string
+    required: true
     pattern: "urn:lsid:marinespecies\\.org:taxname:[0-9]+"
     slot_uri: http://rs.tdwg.org/dwc/terms/scientificNameID
 
@@ -273,18 +281,22 @@ slots:
 
   decimalLongitude:
     range: float
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/decimalLongitude
 
   decimalLatitude:
     range: float
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/decimalLatitude
   
   scientificName:
     range: string
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/scientificName
 
   basisOfRecord:
     range: string
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/basisOfRecord
 
   measurementID:
@@ -293,13 +305,16 @@ slots:
 
   measurementType:
     range: MeasurementTypeType
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/measurementType
 
   measurementUnit:
     range: string
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/measurementUnit
 
   measurementValue:
+    required: true
     slot_uri: http://rs.tdwg.org/dwc/terms/measurementValue
 
   measurementAccuracy:
