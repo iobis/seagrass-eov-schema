@@ -10,3 +10,9 @@ linkml validate --config linkml/seagrass-validation.yaml
 ```bash
 gen-excel linkml/seagrass.yaml --output seagrass_template.xlsx
 ```
+
+## Docs generation
+
+```bash
+gen-markdown -d docs linkml/seagrass.yaml
+```
