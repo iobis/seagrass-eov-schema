@@ -1,5 +1,8 @@
-id: seagrass_data
+id: https://github.com/iobis/seagrass-eov-schema/
 name: SeagrassData
+
+prefixes: 
+  linkml: https://w3id.org/linkml/
 
 imports:
   - linkml:types
@@ -82,6 +85,7 @@ classes:
     slot_usage:
       eventID:
         range: string
+        identifier: true
 
   Occurrence:
     class_uri: http://rs.tdwg.org/dwc/terms/Occurrence
@@ -89,9 +93,7 @@ classes:
       - eventID
       - occurrenceID
       - scientificName
-      - eventID
       - basisOfRecord
-      - occurrenceID
       - occurrenceStatus
       - scientificName
       - scientificNameID
@@ -110,6 +112,7 @@ classes:
         range: Event
       occurrenceID:
         range: string
+        identifier: true
 
   MeasurementOrFact:
     class_uri: http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact
@@ -138,11 +141,9 @@ classes:
 slots:
 
   eventID:
-    identifier: true
     slot_uri: http://rs.tdwg.org/dwc/terms/eventID
 
   occurrenceID:
-    identifier: true
     slot_uri: http://rs.tdwg.org/dwc/terms/occurrenceID
 
   eventDate:
