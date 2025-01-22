@@ -27,6 +27,13 @@ jobs:
       run: |
         gen-markdown -d docs linkml/seagrass.yaml
 
+    - name: Add Jekyll Config
+      run: |
+        cat <<EOL > docs/_config.yml
+        markdown: kramdown
+        theme: minima
+        EOL
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
