@@ -1,8 +1,0 @@
-events:
-  - eventID: sample_1
-    decimalLongitude: 3.1
-    decimalLatitude: 51.2
-
-occurrences:
-  - eventID: sample_2
-    scientificName: Abra alba
