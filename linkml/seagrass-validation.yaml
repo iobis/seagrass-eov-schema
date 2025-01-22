@@ -8,8 +8,11 @@ data_sources:
   - CsvLoader:
       source: data/occurrence.csv
       index_slot_name: occurrences
+  - CsvLoader:
+      source: data/mof.csv
+      index_slot_name: mof
 
-# plugins:
-#   JsonschemaValidationPlugin:
-#     closed: true
-#   RecommendedSlotsPlugin:
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+  RecommendedSlotsPlugin:

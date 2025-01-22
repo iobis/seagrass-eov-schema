@@ -1,3 +1,2 @@
-eventID,scientificName,scientificNameID
-sample_1,Abra alba,1234567
-sample_1,Abra alba,abc
+eventID,occurrenceID,scientificName,scientificNameID
+sample_1,occurrence_1,Abra alba,urn:lsid:marinespecies.org:taxname:123

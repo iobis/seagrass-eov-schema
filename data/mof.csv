@@ -1,0 +1,2 @@
+measurementID,eventID,occurrenceID,measurementType,measurementValue
+1,sample_1,occurrence_1,percentCover,0.6

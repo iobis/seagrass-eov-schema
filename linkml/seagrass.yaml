@@ -55,6 +55,7 @@ classes:
         range: MeasurementOrFact
 
   Event:
+    class_uri: http://rs.tdwg.org/dwc/terms/Event
     slots:
       - eventID
       - decimalLongitude
@@ -83,6 +84,7 @@ classes:
         range: string
 
   Occurrence:
+    class_uri: http://rs.tdwg.org/dwc/terms/Occurrence
     slots:
       - eventID
       - occurrenceID
@@ -110,6 +112,7 @@ classes:
         range: string
 
   MeasurementOrFact:
+    class_uri: http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact
     slots:
       - eventID
       - occurrenceID
@@ -136,152 +139,199 @@ slots:
 
   eventID:
     identifier: true
+    slot_uri: http://rs.tdwg.org/dwc/terms/eventID
 
   occurrenceID:
     identifier: true
-    range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/occurrenceID
 
   eventDate:
     range: date
+    slot_uri: http://rs.tdwg.org/dwc/terms/eventDate
 
   footprintSRS:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/footprintSRS
 
   footprintWKT:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/footprintWKT
 
   bibliographicCitation:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/bibliographicCitation
 
   coordinateUncertaintyInMeters:
     range: float
+    slot_uri: http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters
 
   country:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/country
 
   datasetID:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/datasetID
 
   datasetName:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/datasetName
 
   fieldNotes:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/fieldNotes
 
   geodeticDatum:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/geodeticDatum
 
   habitat:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/habitat
 
   institutionCode:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/institutionCode
 
   institutionID:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/institutionID
 
   license:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/license
 
   maximumDepthInMeters:
     range: float
+    slot_uri: http://rs.tdwg.org/dwc/terms/maximumDepthInMeters
 
   minimumDepthInMeters:
     range: float
+    slot_uri: http://rs.tdwg.org/dwc/terms/minimumDepthInMeters
 
   parentEventID:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/parentEventID
 
   rightsHolder:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/rightsHolder
 
   samplingProtocol:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/samplingProtocol
 
   occurrenceStatus:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/occurrenceStatus
 
   scientificNameID:
+    range: string
     pattern: "urn:lsid:marinespecies\\.org:taxname:[0-9]+"
+    slot_uri: http://rs.tdwg.org/dwc/terms/scientificNameID
 
   class:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/class
 
   family:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/family
 
   genus:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/genus
 
   identifiedBy:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/identifiedBy
 
   kingdom:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/kingdom
 
   order:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/order
 
   phylum:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/phylum
 
   recordedBy:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/recordedBy
 
   taxonRank:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/taxonRank
 
   vernacularName:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/vernacularName
 
   decimalLongitude:
     range: float
+    slot_uri: http://rs.tdwg.org/dwc/terms/decimalLongitude
 
   decimalLatitude:
     range: float
+    slot_uri: http://rs.tdwg.org/dwc/terms/decimalLatitude
   
   scientificName:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/scientificName
 
   basisOfRecord:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/basisOfRecord
 
   measurementID:
-    range: string
     identifier: true
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementID
 
   measurementType:
     range: MeasurementTypeType
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementType
 
   measurementUnit:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementUnit
 
   measurementValue:
-    range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementValue
 
   measurementAccuracy:
-    range: string
-
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementAccuracy
+  
   measurementDeterminedBy:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementDeterminedBy
 
   measurementDeterminedDate:
     range: date
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementDeterminedDate
 
   measurementMethod:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/measurementMethod
 
   measurementTypeID:
     range: string
+    slot_uri: http://rs.iobis.org/obis/terms/measurementTypeID
 
   measurementUnitID:
     range: string
+    slot_uri: http://rs.iobis.org/obis/terms/measurementUnitID
 
   measurementValueID:
     range: string
+    slot_uri: http://rs.iobis.org/obis/terms/measurementValueID
 
   sampleSizeUnit:
     range: string
+    slot_uri: http://rs.tdwg.org/dwc/terms/sampleSizeUnit
 
   sampleSizeValue:
     range: float
+    slot_uri: http://rs.tdwg.org/dwc/terms/sampleSizeValue
