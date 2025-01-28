@@ -1,5 +1,13 @@
 # Seagrass EOV schema
 
+## Frictionless Data Package
+
+### Validation
+
+```bash
+frictionless validate datapackage.json
+```
+
 ## LinkML
 ### Validation
 
@@ -18,10 +26,4 @@ gen-excel linkml/seagrass.yaml --output seagrass_template.xlsx
 ```bash
 # gen-doc throwing an error for now
 gen-markdown -d docs linkml/seagrass.yaml
-```
-
-## Frictionless Data Package
-
-```bash
-frictionless validate datapackage.json
 ```
