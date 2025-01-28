@@ -22,3 +22,6 @@ gen-markdown -d docs linkml/seagrass.yaml
 
 ## Frictionless Data Package
 
+```bash
+frictionless validate datapackage.json
+```
