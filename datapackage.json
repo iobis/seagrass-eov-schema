@@ -1,0 +1,102 @@
+{
+    "name": "seagrass",
+    "id": "https://github.com/iobis/seagrass-eov-schema/",
+    "title": "Seagrass Dataset",
+    "description": "Schema for managing Seagrass Essential Ocean Variable data",
+    "profile": "tabular-data-package",
+    "licenses": [
+      {
+        "name": "CC-BY",
+        "title": "Creative Commons Attribution",
+        "path": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "resources": [
+      {
+        "name": "events",
+        "profile": "tabular-data-resource",
+        "title": "Events",
+        "path": "data/event.csv",
+        "schema": {
+          "fieldsMatch": "superset",
+          "fields": [
+            {"name": "eventID", "type": "string", "constraints": {"required": true}},
+            {"name": "decimalLongitude", "type": "number", "constraints": {"required": true}},
+            {"name": "decimalLatitude", "type": "number", "constraints": {"required": true}},
+            {"name": "eventDate", "type": "date", "constraints": {"required": true}},
+            {"name": "footprintSRS", "type": "string"},
+            {"name": "footprintWKT", "type": "string"},
+            {"name": "bibliographicCitation", "type": "string"},
+            {"name": "coordinateUncertaintyInMeters", "type": "number"},
+            {"name": "country", "type": "string"},
+            {"name": "datasetID", "type": "string"},
+            {"name": "datasetName", "type": "string"},
+            {"name": "fieldNotes", "type": "string"},
+            {"name": "geodeticDatum", "type": "string"},
+            {"name": "habitat", "type": "string"},
+            {"name": "institutionCode", "type": "string"},
+            {"name": "institutionID", "type": "string"},
+            {"name": "license", "type": "string"},
+            {"name": "maximumDepthInMeters", "type": "number"},
+            {"name": "minimumDepthInMeters", "type": "number"},
+            {"name": "parentEventID", "type": "string"},
+            {"name": "rightsHolder", "type": "string"},
+            {"name": "samplingProtocol", "type": "string"}
+          ]
+        }
+      },
+      {
+        "name": "occurrences",
+        "title": "Occurrences",
+        "profile": "tabular-data-resource",
+        "path": "data/occurrence.csv",
+        "schema": {
+          "fieldsMatch": "superset",
+          "fields": [
+            {"name": "occurrenceID", "type": "string", "constraints": {"required": true}},
+            {"name": "eventID", "type": "string", "constraints": {"required": true}},
+            {"name": "scientificName", "type": "string", "constraints": {"required": true}},
+            {"name": "basisOfRecord", "type": "string", "constraints": {"required": true}},
+            {"name": "occurrenceStatus", "type": "string", "constraints": {"required": true}},
+            {"name": "scientificNameID", "type": "string", "constraints": {"required": true, "pattern": "urn:lsid:marinespecies\\.org:taxname:[0-9]+"}},
+            {"name": "class", "type": "string"},
+            {"name": "family", "type": "string"},
+            {"name": "genus", "type": "string"},
+            {"name": "identifiedBy", "type": "string"},
+            {"name": "kingdom", "type": "string"},
+            {"name": "order", "type": "string"},
+            {"name": "phylum", "type": "string"},
+            {"name": "recordedBy", "type": "string"},
+            {"name": "taxonRank", "type": "string"},
+            {"name": "vernacularName", "type": "string"}
+          ]
+        }
+      },
+      {
+        "name": "measurements",
+        "title": "Measurements or Facts",
+        "profile": "tabular-data-resource",
+        "path": "data/mof.csv",
+        "schema": {
+          "fieldsMatch": "superset",
+          "fields": [
+            {"name": "measurementID", "type": "string", "constraints": {"required": true}},
+            {"name": "eventID", "type": "string", "constraints": {"required": true}},
+            {"name": "occurrenceID", "type": "string", "constraints": {"required": true}},
+            {"name": "measurementType", "type": "string", "constraints": {"required": true}},
+            {"name": "measurementUnit", "type": "string", "constraints": {"required": true}},
+            {"name": "measurementValue", "type": "string", "constraints": {"required": true}},
+            {"name": "measurementAccuracy", "type": "string"},
+            {"name": "measurementDeterminedBy", "type": "string"},
+            {"name": "measurementDeterminedDate", "type": "date"},
+            {"name": "measurementMethod", "type": "string"},
+            {"name": "measurementTypeID", "type": "string"},
+            {"name": "measurementUnitID", "type": "string"},
+            {"name": "measurementValueID", "type": "string"},
+            {"name": "sampleSizeUnit", "type": "string"},
+            {"name": "sampleSizeValue", "type": "number"}
+          ]
+        }
+      }
+    ]
+  }
