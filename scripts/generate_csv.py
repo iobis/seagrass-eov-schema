@@ -7,7 +7,7 @@ def export_sheet(sheet_name, output_path):
     print(f"Saved {sheet_name} to {output_path}")
 
 
-xlsx_file = "spreadsheet/Duffy_supplemental_material_data_dictionary_schema_20250127.xlsx"
+xlsx_file = "spreadsheet/Duffy_supplemental_material_data_dictionary_schema_20250129.xlsx"
 excel_data = pd.ExcelFile(xlsx_file)
 
 export_sheet("Example Event", "data/event.csv")
