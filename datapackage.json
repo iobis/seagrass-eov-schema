@@ -1,8 +1,8 @@
 {
-    "name": "seagrass",
+    "name": "seagrass-eov-schema",
     "id": "https://github.com/iobis/seagrass-eov-schema/",
-    "title": "Seagrass Dataset",
-    "description": "Schema for managing Seagrass Essential Ocean Variable data",
+    "title": "Seagrass EOV Schema",
+    "description": "Schema for Seagrass Essential Ocean Variable (EOV) data collection",
     "profile": "tabular-data-package",
     "licenses": [
       {
@@ -19,30 +19,31 @@
         "path": "data/event.csv",
         "schema": {
           "fieldsMatch": "superset",
+          "primaryKey": "eventID",
           "fields": [
-            {"name": "eventID", "type": "string", "constraints": {"required": true}},
-            {"name": "parentEventID", "type": "string"},
-            {"name": "decimalLatitude", "type": "number", "constraints": {"required": true}},
-            {"name": "decimalLongitude", "type": "number", "constraints": {"required": true}},
-            {"name": "geodeticDatum", "type": "string"},
-            {"name": "coordinateUncertaintyInMeters", "type": "number"},
-            {"name": "footprintWKT", "type": "string"},
-            {"name": "countryCode", "type": "string"},
-            {"name": "eventDate", "type": "date", "constraints": {"required": true}},
-            {"name": "bibliographicCitation", "type": "string"},
-            {"name": "datasetID", "type": "string"},
-            {"name": "datasetName", "type": "string"},
-            {"name": "fieldNotes", "type": "string"},
-            {"name": "habitat", "type": "string"},
-            {"name": "institutionCode", "type": "string"},
-            {"name": "institutionID", "type": "string"},
-            {"name": "license", "type": "string"},
-            {"name": "maximumDepthInMeters", "type": "number"},
-            {"name": "minimumDepthInMeters", "type": "number"},
-            {"name": "rightsHolder", "type": "string"},
-            {"name": "samplingProtocol", "type": "string"},
-            {"name": "sampleSizeUnit", "type": "string"},
-            {"name": "sampleSizeValue", "type": "number"}
+            {"name": "eventID", "type": "string", "constraints": {"required": true}, "description": "An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set."},
+            {"name": "parentEventID", "type": "string", "description": "An identifier for the broader dwc:Event that groups this and potentially other dwc:Events."},
+            {"name": "decimalLatitude", "type": "number", "constraints": {"required": true}, "description": "The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive."},
+            {"name": "decimalLongitude", "type": "number", "constraints": {"required": true}, "description": "The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive."},
+            {"name": "geodeticDatum", "type": "string", "description": "The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based."},
+            {"name": "coordinateUncertaintyInMeters", "type": "number", "description": "The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term."},
+            {"name": "footprintWKT", "type": "string", "description": "A Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines the dcterms:Location. A dcterms:Location may have both a point-radius representation (see dwc:decimalLatitude) and a footprint representation, and they may differ from each other."},
+            {"name": "countryCode", "type": "string", "description": "The standard code for the country in which the dcterms:Location occurs."},
+            {"name": "eventDate", "type": "date", "constraints": {"required": true}, "description": "The date-time or interval during which a dwc:Event occurred. For occurrences, this is the date-time when the dwc:Event was recorded. Not suitable for a time in a geological context."},
+            {"name": "bibliographicCitation", "type": "string", "description": "A bibliographic reference for the resource."},
+            {"name": "datasetID", "type": "string", "description": "An identifier for the set of data. May be a global unique identifier or an identifier specific to a collection or institution."},
+            {"name": "datasetName", "type": "string", "description": "The name identifying the data set from which the record was derived."},
+            {"name": "fieldNotes", "type": "string", "description": "One of a) an indicator of the existence of, b) a reference to (publication, URI), or c) the text of notes taken in the field about the dwc:Event."},
+            {"name": "habitat", "type": "string", "description": "A category or description of the habitat in which the dwc:Event occurred."},
+            {"name": "institutionCode", "type": "string", "description": "The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record."},
+            {"name": "institutionID", "type": "string", "description": "An identifier for the institution having custody of the object(s) or information referred to in the record."},
+            {"name": "license", "type": "string", "description": "A legal document giving official permission to do something with the resource."},
+            {"name": "maximumDepthInMeters", "type": "number", "description": "The greater depth of a range of depth below the local surface, in meters."},
+            {"name": "minimumDepthInMeters", "type": "number", "description": "The lesser depth of a range of depth below the local surface, in meters."},
+            {"name": "rightsHolder", "type": "string", "description": "A person or organization owning or managing rights over the resource."},
+            {"name": "samplingProtocol", "type": "string", "description": "The names of, references to, or descriptions of the methods or protocols used during a dwc:Event."},
+            {"name": "sampleSizeUnit", "type": "string", "description": "A numeric value for a measurement of the size (time duration, length, area, or volume) of a sample in a sampling dwc:Event."},
+            {"name": "sampleSizeValue", "type": "number", "description": "The unit of measurement of the size (time duration, length, area, or volume) of a sample in a sampling dwc:Event."}
           ]
         }
       },
@@ -53,24 +54,34 @@
         "path": "data/occurrence.csv",
         "schema": {
           "fieldsMatch": "superset",
+          "primaryKey": "occurrenceID",
+          "foreignKeys": [
+            {
+              "fields": "eventID",
+              "reference": {
+                "resource": "events",
+                "fields": "eventID"
+              }
+            }
+          ],
           "fields": [
-            {"name": "eventID", "type": "string", "constraints": {"required": true}},
-            {"name": "occurrenceID", "type": "string", "constraints": {"required": true}},
-            {"name": "scientificName", "type": "string", "constraints": {"required": true}},
-            {"name": "scientificNameID", "type": "string", "constraints": {"required": true, "pattern": "urn:lsid:marinespecies\\.org:taxname:[0-9]+"}},
-            {"name": "basisOfRecord", "type": "string", "constraints": {"required": true}},
-            {"name": "occurrenceStatus", "type": "string", "constraints": {"required": true}},
-            {"name": "identificationQualifier", "type": "string"},
-            {"name": "identifiedBy", "type": "string"},
-            {"name": "recordedBy", "type": "string"},
-            {"name": "vernacularName", "type": "string"},
-            {"name": "kingdom", "type": "string"},
-            {"name": "phylum", "type": "string"},
-            {"name": "class", "type": "string"},
-            {"name": "order", "type": "string"},
-            {"name": "family", "type": "string"},
-            {"name": "genus", "type": "string"},
-            {"name": "taxonRank", "type": "string"}
+            {"name": "eventID", "type": "string", "constraints": {"required": true}, "description": "An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set."},
+            {"name": "occurrenceID", "type": "string", "constraints": {"required": true}, "description": "An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique."},
+            {"name": "scientificName", "type": "string", "constraints": {"required": true}, "description": "A string representing the taxonomic identification as it appeared in the original record."},
+            {"name": "scientificNameID", "type": "string", "constraints": {"required": true, "pattern": "urn:lsid:marinespecies\\.org:taxname:[0-9]+"}, "description": "An identifier for the nomenclatural (not taxonomic) details of a scientific name."},
+            {"name": "basisOfRecord", "type": "string", "constraints": {"required": true}, "description": "The specific nature of the data record."},
+            {"name": "occurrenceStatus", "type": "string", "constraints": {"required": true}, "description": "A statement about the presence or absence of a dwc:Taxon at a dcterms:Location."},
+            {"name": "identificationQualifier", "type": "string", "description": "A brief phrase or a standard term (\"cf.\", \"aff.\") to express the determiner's doubts about the dwc:Identification."},
+            {"name": "identifiedBy", "type": "string", "description": "A list (concatenated and separated) of names of people, groups, or organizations who assigned the dwc:Taxon to the subject."},
+            {"name": "recordedBy", "type": "string", "description": "A person, group, or organization responsible for recording the original dwc:Occurrence."},
+            {"name": "vernacularName", "type": "string", "description": "A common or vernacular name."},
+            {"name": "kingdom", "type": "string", "description": "The full scientific name of the kingdom in which the dwc:Taxon is classified."},
+            {"name": "phylum", "type": "string", "description": "The full scientific name of the phylum in which the dwc:Taxon is classified."},
+            {"name": "class", "type": "string", "description": "The full scientific name of the class in which the dwc:Taxon is classified."},
+            {"name": "order", "type": "string", "description": "The full scientific name of the order in which the dwc:Taxon is classified."},
+            {"name": "family", "type": "string", "description": "The full scientific name of the family in which the dwc:Taxon is classified."},
+            {"name": "genus", "type": "string", "description": "The full scientific name of the genus in which the dwc:Taxon is classified."},
+            {"name": "taxonRank", "type": "string", "description": "The taxonomic rank of the most specific name in the dwc:scientificName."}
           ]
         }
       },
@@ -81,20 +92,44 @@
         "path": "data/mof.csv",
         "schema": {
           "fieldsMatch": "superset",
+          "foreignKeys": [
+            {
+              "fields": "eventID",
+              "reference": {
+                "resource": "events",
+                "fields": "eventID"
+              }
+            },
+            {
+              "fields": "occurrenceID",
+              "reference": {
+                "resource": "occurrences",
+                "fields": "occurrenceID"
+              }
+            }
+          ],
           "fields": [
-            {"name": "eventID", "type": "string", "constraints": {"required": true}},
-            {"name": "occurrenceID", "type": "string", "constraints": {"required": true}},
-            {"name": "measurementID", "type": "string"},
-            {"name": "measurementType", "type": "string", "constraints": {"required": true}},
-            {"name": "measurementUnit", "type": "string", "constraints": {"required": true}},
-            {"name": "measurementValue", "type": "string", "constraints": {"required": true}},
-            {"name": "measurementAccuracy", "type": "string"},
-            {"name": "measurementDeterminedBy", "type": "string"},
-            {"name": "measurementDeterminedDate", "type": "date"},
-            {"name": "measurementMethod", "type": "string"},
-            {"name": "measurementTypeID", "type": "string"},
-            {"name": "measurementUnitID", "type": "string"},
-            {"name": "measurementValueID", "type": "string"}
+            {"name": "eventID", "type": "string", "constraints": {"required": true}, "description": "An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set."},
+            {"name": "occurrenceID", "type": "string", "constraints": {"required": true}, "description": "An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique."},
+            {"name": "measurementID", "type": "string", "description": "An identifier for the dwc:MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set."},
+            {
+              "name": "measurementType",
+              "type": "string",
+              "constraints": {
+                "required": true,
+                "pattern": "^arealExtent|percentCover|canopyHeight|shootDensity|shootLength|aboveGroundBiomass|belowGroundBiomass|depth|waterClarity|waterTemperature|salinity|sedimentGrainSize|epifaunaAbundance|fishAbundance|macroalgaeBiomass|macroalgaeCover|epiphyteDryMass|.*$"
+              },
+              "description": "The nature of the measurement, fact, characteristic, or assertion."
+            },
+            {"name": "measurementUnit", "type": "string", "constraints": {"required": true}, "description": "The units associated with the dwc:measurementValue."},
+            {"name": "measurementValue", "type": "string", "constraints": {"required": true}, "description": "The value of the measurement, fact, characteristic, or assertion."},
+            {"name": "measurementAccuracy", "type": "string", "description": "The description of the potential error associated with the dwc:measurementValue."},
+            {"name": "measurementDeterminedBy", "type": "string", "description": "A list (concatenated and separated) of names of people, groups, or organizations who determined the value of the dwc:MeasurementOrFact."},
+            {"name": "measurementDeterminedDate", "type": "date", "description": "The date on which the dwc:MeasurementOrFact was made."},
+            {"name": "measurementMethod", "type": "string", "description": "A description of or reference to (publication, URI) the method or protocol used to determine the measurement, fact, characteristic, or assertion."},
+            {"name": "measurementTypeID", "type": "string", "description": "An identifier for the measurementType (global unique identifier, URI). The identifier should reference the measurementType in a vocabulary."},
+            {"name": "measurementUnitID", "type": "string", "description": "An identifier for the measurementUnit (global unique identifier, URI). The identifier should reference the measurementUnit in a vocabulary."},
+            {"name": "measurementValueID", "type": "string", "description": "An identifier for facts stored in the column measurementValue (global unique identifier, URI). This identifier can reference a controlled vocabulary (e.g. for sampling instrument names, methodologies, life stages) or reference a methodology paper with a DOI. When the measurementValue refers to a value and not to a fact, the measurementvalueID has no meaning and should remain empty."}
           ]
         }
       }
