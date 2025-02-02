@@ -1,0 +1,11 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Seagrass EOV Data Package",
+    "description": "Data schema for Seagrass Essential Ocean Variable (EOV) data",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://specs.frictionlessdata.io/schemas/data-package.json"
+        }
+    ]
+}

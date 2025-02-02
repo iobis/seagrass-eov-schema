@@ -1,12 +1,11 @@
 {
-    "name": "seagrass-eov-schema",
-    "id": "https://github.com/iobis/seagrass-eov-schema/",
-    "title": "Seagrass EOV Schema",
-    "description": "Schema for Seagrass Essential Ocean Variable (EOV) data collection",
-    "profile": "tabular-data-package",
+    "name": "seagrass-eov-example-dataset",
+    "title": "Seagrass EOV example dataset",
+    "description": "Seagrass EOV example dataset",
+    "profile": "https://raw.githubusercontent.com/iobis/seagrass-eov-schema/refs/heads/main/datapackage.json",
     "licenses": [
       {
-        "name": "CC-BY",
+        "name": "CC BY",
         "title": "Creative Commons Attribution",
         "path": "https://creativecommons.org/licenses/by/4.0/"
       }
