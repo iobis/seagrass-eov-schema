@@ -1,0 +1,77 @@
+---
+layout: home
+---
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<div class="container my-4">
+
+<h1>{{ site.data.profile.title }}</h1>
+
+<h2>Resources</h2>
+
+<p>This describes each of the tables in a {{ site.data.profile.title }}.</p>
+
+{% for resource in site.data.datapackage.resources %}
+
+<h3>{{ resource.title }}</h3>
+
+<table class="table table-sm">
+  <colgroup>
+    <col width="25%">
+    <col width="65%">
+    <col width="10%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Definition</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for field in resource.schema.fields %}
+    <tr class="text-break">
+      <td id="{{ table_schema_id }}.{{ field.name }}">
+        <code>{{ field.name }}</code>
+        {% if field.constraints.required %}*{% endif %}
+      </td>
+      <td>
+        {{ field.description | markdownify }}
+        {% if field.constraints %}
+        <strong>Constraints</strong>
+        <ul>
+          {% for constraint in field.constraints %}
+          <li>{{ constraint[0] }}: <code>{{ constraint[1] | join: ", " }}</code></li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if field.example and field.example != "" %}
+        <p>
+          <strong>Example</strong>: <code>{{ field.example }}</code>
+        </p>
+        {% endif %}
+        <ul class="list-unstyled mb-0">
+          {% if field['skos:exactMatch'] %}
+          <li class="small text-muted">Same as {% for term in field['skos:exactMatch'] %}<a href="{{ term }}">{{ term
+              }}</a> {% endfor %}</li>
+          {% endif %}
+          {% if field['skos:narrowMatch'] %}
+          <li class="small text-muted">Broader than {% for term in field['skos:narrowMatch'] %}<a href="{{ term }}">{{
+              term }}</a> {% endfor %}</a></li>
+          {% endif %}
+          {% if field['skos:broadMatch'] %}
+          <li class="small text-muted">Narrower than {% for term in field['skos:broadMatch'] %}<a href="{{ term }}">{{
+              term }}</a> {% endfor %}</a></li>
+          {% endif %}
+        </ul>
+      </td>
+      <td><span class="badge bg-secondary">{{ field.type }}</span></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endfor %}
+</div>
