@@ -61,7 +61,7 @@ layout: home
         {% if fk.fields == field.name %}
         <strong>Foreign keys</strong>
         <ul>
-        <li>{{ fk.reference.resource }}.{{ fk.reference.fields }}</li>
+        <li><code>{{ fk.reference.resource }}.{{ fk.reference.fields }}</code></li>
         </ul>
         {% endif %}
         {% endfor %}
