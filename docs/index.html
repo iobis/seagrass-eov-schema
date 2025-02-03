@@ -23,7 +23,7 @@ layout: home
 
 {% for resource in site.data.datapackage.resources %}
 
-<h3><a link="{{ resource.name }}"></a>{{ resource.title }}</h3>
+<h3 id="{{ resource.name }}">{{ resource.title }}</h3>
 
 <table class="table table-sm">
   <colgroup>
