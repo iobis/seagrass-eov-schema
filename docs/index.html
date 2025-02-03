@@ -42,7 +42,7 @@ layout: home
   <tbody>
     {% for field in resource.schema.fields %}
     <tr class="text-break">
-      <td id="{{ table_schema_id }}.{{ field.name }}">
+      <td id="{{ resource.name }}.{{ field.name }}">
         <code>{{ field.name }}</code>
         {% if field.constraints.required %}*{% endif %}
       </td>
@@ -61,7 +61,7 @@ layout: home
         {% if fk.fields == field.name %}
         <strong>Foreign keys</strong>
         <ul>
-        <li><code>{{ fk.reference.resource }}.{{ fk.reference.fields }}</code></li>
+        <li><a href="#{{ fk.reference.resource }}.{{ fk.reference.fields }}">{{ fk.reference.resource }}.{{ fk.reference.fields }}</a></li>
         </ul>
         {% endif %}
         {% endfor %}
