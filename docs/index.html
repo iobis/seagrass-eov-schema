@@ -9,9 +9,11 @@ layout: home
 
 <h1>{{ site.data.profile.title }}</h1>
 
+<p><a href="{{ site.data.datapackage.id }}" target="_blank">{{ site.data.datapackage.id }}</a></p>
+
 <h2>Resources</h2>
 
-<p>This describes each of the tables in a {{ site.data.profile.title }}.</p>
+<p>This describes each of the resources (tables) in a {{ site.data.profile.title }}.</p>
 
 <ul>
   {% for resource in site.data.datapackage.resources %}

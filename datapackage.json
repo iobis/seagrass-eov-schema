@@ -1,8 +1,9 @@
 {
     "name": "seagrass-eov-example-dataset",
     "title": "Seagrass EOV example dataset",
+    "id": "https://github.com/iobis/seagrass-eov-schema/blob/main/datapackage.json",
     "description": "Seagrass EOV example dataset",
-    "profile": "https://raw.githubusercontent.com/iobis/seagrass-eov-schema/refs/heads/main/datapackage.json",
+    "profile": "https://raw.githubusercontent.com/iobis/seagrass-eov-schema/refs/heads/main/seagrass-eov-profile.json",
     "licenses": [
       {
         "name": "CC BY",
