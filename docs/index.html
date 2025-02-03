@@ -3,6 +3,7 @@ layout: home
 ---
 
 <link href="bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
 <script src="bootstrap/bootstrap.bundle.min.js"></script>
 
 <div class="container my-4">
@@ -85,7 +86,7 @@ layout: home
           {% endif %}
         </ul>
       </td>
-      <td><span class="badge bg-secondary">{{ field.type }}</span></td>
+      <td><span class="badge badge-{{ field.type }}">{{ field.type }}</span></td>
     </tr>
     {% endfor %}
   </tbody>

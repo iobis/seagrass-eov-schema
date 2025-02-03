@@ -1,0 +1,11 @@
+.badge-string {
+    background-color: darkkhaki;
+}
+
+.badge-number {
+    background-color: lightslategrey;
+}
+
+.badge-date {
+    background-color: indianred;
+}
