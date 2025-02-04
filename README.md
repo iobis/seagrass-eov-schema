@@ -4,6 +4,10 @@ The Seagrass EOV schema represents the publishing data model for Seagrass EOV da
 
 The data schema is described as a [Frictionless Data Package](https://datapackage.org/), compatible with the Darwin Core Archive format used by infrastructures such as OBIS and GBIF. The Data Package documentation is available in a human readable format at <https://iobis.github.io/seagrass-eov-schema/>.
 
+## Validation
+
+In addition to the checks built into the Frictionless toolkit, some custom validation steps will be implemented. For example, validation using Frictionless will currently not pick up inconsistencies between measurement types and their identifiers.
+
 ## Example dataset
 
 An example dataset is included as CSV in the `data` folder. The expected structure of this dataset is described in `package.json`. To validate the example dataset, install [frictionless-py](https://github.com/frictionlessdata/frictionless-py) and run `frictionless validate datapackage.json`.
