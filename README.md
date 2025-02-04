@@ -6,13 +6,12 @@ The Data Package documentation is available in a human readable format at <https
 
 ## Example dataset
 
-An example dataset is included as CSV in the `data` folder. The expected structure of this dataset is described in `package.json`. To validate the example dataset, install [frictionless-py](https://github.com/frictionlessdata/frictionless-py) and run:
+An example dataset is included as CSV in the `data` folder. The expected structure of this dataset is described in `package.json`. To validate the example dataset, install [frictionless-py](https://github.com/frictionlessdata/frictionless-py) and run `frictionless validate datapackage.json`.
 
 ```bash
-frictionless validate datapackage.json
-```
+% frictionless validate datapackage.json
 
-```
+─────────────────────── Dataset ───────────────────────
                         dataset                        
 ┏━━━━━━━━━━━━━━┳━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┓
 ┃ name         ┃ type  ┃ path                ┃ status ┃
