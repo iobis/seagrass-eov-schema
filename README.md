@@ -4,7 +4,7 @@ The Seagrass EOV schema represents the publishing data model for Seagrass EOV da
 
 The Data Package documentation is available in a human readable format at <https://iobis.github.io/seagrass-eov-schema/>.
 
-## Validation
+## Example dataset
 
 An example dataset is included as CSV in the `data` folder. The expected structure of this dataset is described in `package.json`. To validate the example dataset, install [frictionless-py](https://github.com/frictionlessdata/frictionless-py) and run:
 
