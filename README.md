@@ -1,8 +1,8 @@
 # Seagrass EOV schema
 
-The Seagrass EOV schema represents the publishing data model for Seagrass EOV datasets into global biodiversity infrastructures. The data schema is described as a [Frictionless Data Package](https://frictionlessdata.io/), compatible with the Darwin Core Archive format used by infrastructures such as OBIS and GBIF. It intends to be the schema where all Seagrass EOV datasets can be transformed into regardless of the data collection protocol and data entry format.
+The Seagrass EOV schema represents the publishing data model for Seagrass EOV datasets into global biodiversity infrastructures. It intends to be the schema where all Seagrass EOV datasets can be transformed into regardless of the data collection protocol and data entry format.
 
-The Data Package documentation is available in a human readable format at <https://iobis.github.io/seagrass-eov-schema/>.
+The data schema is described as a [Frictionless Data Package](https://datapackage.org/), compatible with the Darwin Core Archive format used by infrastructures such as OBIS and GBIF. The Data Package documentation is available in a human readable format at <https://iobis.github.io/seagrass-eov-schema/>.
 
 ## Example dataset
 
