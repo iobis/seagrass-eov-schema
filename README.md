@@ -1,8 +1,12 @@
 # Seagrass EOV schema
 
-<https://iobis.github.io/seagrass-eov-schema/>
+The Seagrass EOV schema represents the publishing data model for Seagrass EOV datasets into global biodiversity infrastructures. The data schema is described as a Frictionless Data Package, compatible with the Darwin Core Archive format used by infrastructures such as OBIS and GBIF. It intends to be the schema where all Seagrass EOV datasets can be transformed into regardless of the data collection protocol and data entry format.
+
+The Data Package documentation is available in a human readable format at <https://iobis.github.io/seagrass-eov-schema/>.
 
 ## Validation
+
+An example dataset is included as CSV in the `data` folder. The expected structure of this dataset is described in `package.json`. To validate the example dataset, install [frictionless-py](https://github.com/frictionlessdata/frictionless-py) and run:
 
 ```bash
 frictionless validate datapackage.json
